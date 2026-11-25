@@ -1,0 +1,7 @@
+{
+ "url": "http://127.0.0.1:3191",
+ "availability": "unreachable-host",
+ "loginUrlAllowed": true,
+ "ticket": "none",
+ "pollIntervalMs": 1000
+}

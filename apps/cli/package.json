@@ -1,0 +1,12 @@
+{
+  "name": "@deepseek-ai/dsh",
+  "version": "0.2.3",
+  "private": true,
+  "description": "Metadata anchor for the native Rust Host",
+  "dependencies": {},
+  "dsh": {
+    "host": {
+      "profile": "desktop"
+    }
+  }
+}

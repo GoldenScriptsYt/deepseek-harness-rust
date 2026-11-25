@@ -1,0 +1,22 @@
+[package]
+name = "dsh-mcp"
+version = "0.1.0"
+edition = "2021"
+publish = false
+license = "MIT"
+
+[dependencies]
+dsh-core = { path = "../dsh-core" }
+dsh-llm = { path = "../dsh-llm" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+sha2 = "0.10"
+tokio = { version = "1", features = ["io-util", "macros", "process", "rt-multi-thread", "sync", "time"] }
+
+[dev-dependencies]
+tempfile = "3"
+tokio = { version = "1", features = ["test-util"] }
+
+[[bin]]
+name = "fake-mcp-server"
+path = "tests/fixtures/fake_server.rs"

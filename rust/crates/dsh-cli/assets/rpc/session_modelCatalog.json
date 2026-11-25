@@ -1,0 +1,9 @@
+{
+ "default": {
+  "provider": "deepseek-official",
+  "model": "deepseek-flash"
+ },
+ "routableProviders": [],
+ "groups": [],
+ "failures": []
+}

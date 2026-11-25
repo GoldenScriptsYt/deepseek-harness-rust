@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>DeepSeek Harness</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #fff;
+        --fg: #151517;
+        --muted: #6b7280;
+        --accent: #4d6bfe;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          color-scheme: dark;
+          --bg: #151517;
+          --fg: #f3f4f6;
+          --muted: #9ca3af;
+        }
+      }
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+      }
+      body {
+        display: grid;
+        place-items: center;
+        background: var(--bg);
+        color: var(--fg);
+        font: 14px/1.5 ui-sans-serif, system-ui, sans-serif;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+      main {
+        display: grid;
+        gap: 14px;
+        justify-items: center;
+        padding: 2rem;
+      }
+      .mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        border: 2px solid var(--accent);
+        border-top-color: transparent;
+        animation: spin 0.9s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .mark {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="mark" role="status" aria-label="Loading"></div>
+    </main>
+  </body>
+</html>

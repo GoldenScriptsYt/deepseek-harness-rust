@@ -1,0 +1,4460 @@
+{
+ "writable": true,
+ "hasDocument": true,
+ "namespaces": [
+  {
+   "ns": "session-log-deepseek",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 4497,
+    "refs": {
+     "4496": {
+      "type": "boolean",
+      "meta": {
+       "default": true
+      }
+     },
+     "4497": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "enabled": 4496
+      }
+     }
+    }
+   },
+   "value": {
+    "enabled": true
+   },
+   "base": {
+    "enabled": true
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "agent-default-model",
+   "autoGenerate": false,
+   "schema": {
+    "uid": 4502,
+    "refs": {
+     "4499": {
+      "type": "string",
+      "meta": {
+       "required": true
+      }
+     },
+     "4500": {
+      "type": "string",
+      "meta": {
+       "required": true
+      }
+     },
+     "4501": {
+      "type": "string",
+      "meta": {}
+     },
+     "4502": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "provider": 4499,
+       "model": 4500,
+       "reasoningEffort": 4501
+      }
+     }
+    }
+   },
+   "value": {
+    "provider": "deepseek-official",
+    "model": "deepseek-flash"
+   },
+   "base": {
+    "provider": "deepseek-official",
+    "model": "deepseek-flash"
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "llm-pi-ai",
+   "autoGenerate": false,
+   "schema": {
+    "uid": 4663,
+    "refs": {
+     "4506": {
+      "type": "number",
+      "meta": {
+       "min": 5e-324,
+       "max": 2147483647,
+       "default": 500
+      }
+     },
+     "4507": {
+      "type": "number",
+      "meta": {
+       "min": 5e-324,
+       "max": 2147483647,
+       "default": 10000
+      }
+     },
+     "4508": {
+      "type": "number",
+      "meta": {
+       "min": 0,
+       "max": 1,
+       "default": 0.1
+      }
+     },
+     "4509": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "initialDelayMs": 4506,
+       "maxDelayMs": 4507,
+       "jitterRatio": 4508
+      }
+     },
+     "4510": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "normal"
+     },
+     "4511": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 0,
+       "max": 9007199254740991,
+       "default": 5
+      }
+     },
+     "4512": {
+      "type": "const",
+      "meta": {},
+      "value": "EMPTY_RESPONSE"
+     },
+     "4513": {
+      "type": "const",
+      "meta": {},
+      "value": "MALFORMED_RESPONSE"
+     },
+     "4514": {
+      "type": "const",
+      "meta": {},
+      "value": "QUOTA"
+     },
+     "4515": {
+      "type": "const",
+      "meta": {},
+      "value": "RATE_LIMIT"
+     },
+     "4516": {
+      "type": "const",
+      "meta": {},
+      "value": "SERVER"
+     },
+     "4517": {
+      "type": "const",
+      "meta": {},
+      "value": "STREAM_CLOSED"
+     },
+     "4518": {
+      "type": "const",
+      "meta": {},
+      "value": "TIMEOUT"
+     },
+     "4519": {
+      "type": "const",
+      "meta": {},
+      "value": "TRANSPORT"
+     },
+     "4520": {
+      "type": "string",
+      "meta": {
+       "min": 1
+      }
+     },
+     "4521": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4512,
+       4513,
+       4514,
+       4515,
+       4516,
+       4517,
+       4518,
+       4519,
+       4520
+      ]
+     },
+     "4522": {
+      "type": "array",
+      "meta": {
+       "default": [
+        "EMPTY_RESPONSE",
+        "RATE_LIMIT",
+        "SERVER",
+        "TIMEOUT",
+        "TRANSPORT"
+       ],
+       "min": 1
+      },
+      "inner": 4521
+     },
+     "4523": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "mode": 4510,
+       "maxRetries": 4511,
+       "retryableCodes": 4522,
+       "backoff": 4509
+      }
+     },
+     "4524": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "always"
+     },
+     "4525": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "mode": 4524,
+       "backoff": 4509
+      }
+     },
+     "4526": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4523,
+       4525
+      ]
+     },
+     "4527": {
+      "type": "number",
+      "meta": {}
+     },
+     "4528": {
+      "type": "number",
+      "meta": {}
+     },
+     "4529": {
+      "type": "number",
+      "meta": {}
+     },
+     "4530": {
+      "type": "number",
+      "meta": {}
+     },
+     "4531": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "minimal": 4527,
+       "low": 4528,
+       "medium": 4529,
+       "high": 4530
+      }
+     },
+     "4532": {
+      "type": "string",
+      "meta": {}
+     },
+     "4533": {
+      "type": "number",
+      "meta": {}
+     },
+     "4534": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4535": {
+      "type": "const",
+      "meta": {},
+      "value": null
+     },
+     "4536": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "thinking.enabled"
+     },
+     "4537": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "thinking.effort"
+     },
+     "4538": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "thinking.budget"
+     },
+     "4539": {
+      "type": "union",
+      "meta": {
+       "required": true
+      },
+      "list": [
+       4536,
+       4537,
+       4538
+      ]
+     },
+     "4540": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4541": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "$var": 4539,
+       "omitWhenOff": 4540
+      }
+     },
+     "4542": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4532,
+       4533,
+       4534,
+       4535,
+       4541
+      ]
+     },
+     "4543": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4544": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4545": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4546": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4547": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4548": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4549,
+       4550
+      ]
+     },
+     "4549": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "max_completion_tokens"
+     },
+     "4550": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "max_tokens"
+     },
+     "4551": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4552": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4553": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4554": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4555": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4556,
+       4557,
+       4558,
+       4559,
+       4560,
+       4561,
+       4562,
+       4563,
+       4564,
+       4565,
+       4566
+      ]
+     },
+     "4556": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "openai"
+     },
+     "4557": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "deepseek"
+     },
+     "4558": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "openrouter"
+     },
+     "4559": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "together"
+     },
+     "4560": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "baseten"
+     },
+     "4561": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "zai"
+     },
+     "4562": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "qwen"
+     },
+     "4563": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "chat-template"
+     },
+     "4564": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "qwen-chat-template"
+     },
+     "4565": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "string-thinking"
+     },
+     "4566": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "ant-ling"
+     },
+     "4567": {
+      "type": "dict",
+      "meta": {
+       "default": {}
+      },
+      "inner": 4542,
+      "sKey": 4568
+     },
+     "4568": {
+      "type": "string",
+      "meta": {}
+     },
+     "4569": {
+      "type": "dict",
+      "meta": {
+       "default": {}
+      },
+      "inner": 4542,
+      "sKey": 4570
+     },
+     "4570": {
+      "type": "string",
+      "meta": {}
+     },
+     "4571": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4572": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4573,
+       4574,
+       4575
+      ]
+     },
+     "4573": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "thinking_token_budget"
+     },
+     "4574": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "thinking_budget"
+     },
+     "4575": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "thinking_budget_tokens"
+     },
+     "4576": {
+      "type": "number",
+      "meta": {
+       "step": 1
+      }
+     },
+     "4577": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4578": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4579": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4580
+      ]
+     },
+     "4580": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "anthropic"
+     },
+     "4581": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4582": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4583": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4584": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4585": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4586": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4587": {
+      "type": "boolean",
+      "meta": {}
+     },
+     "4588": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "supportsStore": 4543,
+       "supportsDeveloperRole": 4544,
+       "supportsReasoningEffort": 4545,
+       "supportsUsageInStreaming": 4546,
+       "supportsFinishReason": 4547,
+       "maxTokensField": 4548,
+       "requiresToolResultName": 4551,
+       "requiresAssistantAfterToolResult": 4552,
+       "requiresThinkingAsText": 4553,
+       "requiresReasoningContentOnAssistantMessages": 4554,
+       "thinkingFormat": 4555,
+       "chatTemplateKwargs": 4567,
+       "chatTemplateArgs": 4569,
+       "supportsThinkingTokenBudget": 4571,
+       "thinkingTokenBudgetField": 4572,
+       "vllmPriority": 4576,
+       "supportsMaxOutputTokens": 4577,
+       "supportsStrictMode": 4578,
+       "cacheControlFormat": 4579,
+       "supportsLongCacheRetention": 4581,
+       "supportsEagerToolInputStreaming": 4582,
+       "supportsCacheControlOnTools": 4583,
+       "supportsTemperature": 4584,
+       "forceAdaptiveThinking": 4585,
+       "allowEmptySignature": 4586,
+       "supportsStrictTools": 4587
+      }
+     },
+     "4589": {
+      "type": "string",
+      "meta": {}
+     },
+     "4590": {
+      "type": "const",
+      "meta": {},
+      "value": null
+     },
+     "4591": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4589,
+       4590
+      ]
+     },
+     "4592": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4593,
+       4594,
+       4595,
+       4596,
+       4597,
+       4598,
+       4599
+      ]
+     },
+     "4593": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "off"
+     },
+     "4594": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "minimal"
+     },
+     "4595": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "low"
+     },
+     "4596": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "medium"
+     },
+     "4597": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "high"
+     },
+     "4598": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "xhigh"
+     },
+     "4599": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "max"
+     },
+     "4600": {
+      "type": "dict",
+      "meta": {
+       "default": {}
+      },
+      "inner": 4591,
+      "sKey": 4592
+     },
+     "4601": {
+      "type": "string",
+      "meta": {}
+     },
+     "4602": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1
+      }
+     },
+     "4603": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1
+      }
+     },
+     "4604": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4605,
+       4606
+      ]
+     },
+     "4605": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "text"
+     },
+     "4606": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "image"
+     },
+     "4607": {
+      "type": "array",
+      "meta": {
+       "default": []
+      },
+      "inner": 4604
+     },
+     "4608": {
+      "type": "const",
+      "meta": {},
+      "value": false
+     },
+     "4609": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4608,
+       4600
+      ]
+     },
+     "4610": {
+      "type": "string",
+      "meta": {
+       "required": true
+      }
+     },
+     "4611": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "id": 4610,
+       "name": 4601,
+       "contextWindow": 4602,
+       "maxTokens": 4603,
+       "input": 4607,
+       "reasoningEfforts": 4609,
+       "compat": 4588
+      }
+     },
+     "4612": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "name": 4601,
+       "contextWindow": 4602,
+       "maxTokens": 4603,
+       "input": 4607,
+       "reasoningEfforts": 4609,
+       "compat": 4588
+      }
+     },
+     "4613": {
+      "type": "string",
+      "meta": {
+       "role": "credential-ref"
+      }
+     },
+     "4614": {
+      "type": "string",
+      "meta": {}
+     },
+     "4615": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4616,
+       4617,
+       4618,
+       4619
+      ]
+     },
+     "4616": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "openai-completions"
+     },
+     "4617": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "openai-responses"
+     },
+     "4618": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "anthropic-messages"
+     },
+     "4619": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "google-generative-ai"
+     },
+     "4620": {
+      "type": "string",
+      "meta": {}
+     },
+     "4621": {
+      "type": "array",
+      "meta": {
+       "default": []
+      },
+      "inner": 4611
+     },
+     "4622": {
+      "type": "dict",
+      "meta": {
+       "default": {}
+      },
+      "inner": 4612,
+      "sKey": 4623
+     },
+     "4623": {
+      "type": "string",
+      "meta": {}
+     },
+     "4624": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 1000000
+      }
+     },
+     "4625": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 128000
+      }
+     },
+     "4626": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4627,
+       4628
+      ]
+     },
+     "4627": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "text"
+     },
+     "4628": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "image"
+     },
+     "4629": {
+      "type": "array",
+      "meta": {
+       "default": [
+        "text"
+       ]
+      },
+      "inner": 4626
+     },
+     "4630": {
+      "type": "string",
+      "meta": {}
+     },
+     "4631": {
+      "type": "dict",
+      "meta": {
+       "default": {}
+      },
+      "inner": 4630,
+      "sKey": 4632
+     },
+     "4632": {
+      "type": "string",
+      "meta": {}
+     },
+     "4633": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4634,
+       4635,
+       4636,
+       4637,
+       4638,
+       4639,
+       4640
+      ]
+     },
+     "4634": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "off"
+     },
+     "4635": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "minimal"
+     },
+     "4636": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "low"
+     },
+     "4637": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "medium"
+     },
+     "4638": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "high"
+     },
+     "4639": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "xhigh"
+     },
+     "4640": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "max"
+     },
+     "4641": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4642,
+       4643,
+       4644
+      ]
+     },
+     "4642": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "none"
+     },
+     "4643": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "short"
+     },
+     "4644": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "long"
+     },
+     "4645": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4646,
+       4647,
+       4648,
+       4649
+      ]
+     },
+     "4646": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "sse"
+     },
+     "4647": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "websocket"
+     },
+     "4648": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "websocket-cached"
+     },
+     "4649": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "auto"
+     },
+     "4650": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 0
+      }
+     },
+     "4651": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 0
+      }
+     },
+     "4652": {
+      "type": "number",
+      "meta": {
+       "min": 5e-324,
+       "max": 2147483647,
+       "default": 300000
+      }
+     },
+     "4653": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 20971520
+      }
+     },
+     "4654": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 50
+      }
+     },
+     "4655": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1
+      }
+     },
+     "4656": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 9007199254740991,
+       "default": 20
+      }
+     },
+     "4657": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 4194304
+      }
+     },
+     "4658": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 9007199254740991
+      }
+     },
+     "4659": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 9007199254740991
+      }
+     },
+     "4660": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "apiKeyEnv": 4613,
+       "displayName": 4614,
+       "api": 4615,
+       "baseURL": 4620,
+       "models": 4621,
+       "modelOverrides": 4622,
+       "compat": 4588,
+       "defaultContextWindow": 4624,
+       "defaultMaxTokens": 4625,
+       "defaultInput": 4629,
+       "headers": 4631,
+       "reasoning": 4633,
+       "thinkingBudgets": 4531,
+       "cacheRetention": 4641,
+       "transport": 4645,
+       "timeoutMs": 4650,
+       "websocketConnectTimeoutMs": 4651,
+       "streamIdleTimeoutMs": 4652,
+       "maxRequestImageBytes": 4653,
+       "maxRequestImages": 4654,
+       "imageOffloadCountQuantum": 4655,
+       "requestImageBudgetCount": 4656,
+       "requestImagePixelBudget": 4657,
+       "requestImageMaxDimension": 4658,
+       "requestImageMaxBytes": 4659,
+       "retryPolicy": 4526
+      }
+     },
+     "4661": {
+      "type": "string",
+      "meta": {}
+     },
+     "4662": {
+      "type": "dict",
+      "meta": {
+       "default": {}
+      },
+      "inner": 4660,
+      "sKey": 4661
+     },
+     "4663": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "providers": 4662
+      }
+     }
+    }
+   },
+   "value": {
+    "providers": {}
+   },
+   "base": {
+    "providers": {}
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "pwsh-sandbox",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 4672,
+    "refs": {
+     "4665": {
+      "type": "string",
+      "meta": {}
+     },
+     "4666": {
+      "type": "number",
+      "meta": {
+       "default": 120000
+      }
+     },
+     "4667": {
+      "type": "number",
+      "meta": {
+       "default": 600000
+      }
+     },
+     "4668": {
+      "type": "number",
+      "meta": {
+       "default": 64000
+      }
+     },
+     "4669": {
+      "type": "number",
+      "meta": {
+       "default": 67108864
+      }
+     },
+     "4670": {
+      "type": "number",
+      "meta": {
+       "default": 3000
+      }
+     },
+     "4671": {
+      "type": "string",
+      "meta": {}
+     },
+     "4672": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "cwd": 4665,
+       "timeoutMs": 4666,
+       "maxTimeoutMs": 4667,
+       "maxOutputBytes": 4668,
+       "maxSpillBytes": 4669,
+       "graceMs": 4670,
+       "pwshPath": 4671
+      }
+     }
+    }
+   },
+   "value": {
+    "timeoutMs": 120000,
+    "maxTimeoutMs": 600000,
+    "maxOutputBytes": 64000,
+    "maxSpillBytes": 67108864,
+    "graceMs": 3000
+   },
+   "base": {
+    "timeoutMs": 120000,
+    "maxTimeoutMs": 600000,
+    "maxOutputBytes": 64000,
+    "maxSpillBytes": 67108864,
+    "graceMs": 3000
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "permission",
+   "autoGenerate": false,
+   "schema": {
+    "uid": 4681,
+    "refs": {
+     "4680": {
+      "type": "string",
+      "meta": {}
+     },
+     "4681": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "defaultPreset": 4680
+      }
+     }
+    }
+   },
+   "value": {},
+   "base": {},
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "subagent",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 4685,
+    "refs": {
+     "4683": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 0,
+       "max": 9007199254740991,
+       "default": 1
+      }
+     },
+     "4684": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 9007199254740991,
+       "default": 8
+      }
+     },
+     "4685": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "maxDepth": 4683,
+       "maxActiveSubagents": 4684
+      }
+     }
+    }
+   },
+   "value": {
+    "maxDepth": 1,
+    "maxActiveSubagents": 8
+   },
+   "base": {
+    "maxDepth": 1,
+    "maxActiveSubagents": 8
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "web",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 4690,
+    "refs": {
+     "4688": {
+      "type": "string",
+      "meta": {}
+     },
+     "4689": {
+      "type": "string",
+      "meta": {}
+     },
+     "4690": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "searchProvider": 4688,
+       "fetchProvider": 4689
+      }
+     }
+    }
+   },
+   "value": {
+    "fetchProvider": "http"
+   },
+   "base": {
+    "fetchProvider": "http"
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "web-search-deepseek",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 4700,
+    "refs": {
+     "4693": {
+      "type": "string",
+      "meta": {
+       "role": "secret"
+      }
+     },
+     "4694": {
+      "type": "string",
+      "meta": {
+       "role": "credential-ref",
+       "default": "DEEPSEEK_API_KEY"
+      }
+     },
+     "4695": {
+      "type": "string",
+      "meta": {}
+     },
+     "4696": {
+      "type": "string",
+      "meta": {
+       "default": "deepseek-v4-flash"
+      }
+     },
+     "4697": {
+      "type": "string",
+      "meta": {
+       "default": "2023-06-01"
+      }
+     },
+     "4698": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 4096
+      }
+     },
+     "4699": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 5
+      }
+     },
+     "4700": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "apiKey": 4693,
+       "apiKeyEnv": 4694,
+       "baseURL": 4695,
+       "model": 4696,
+       "apiVersion": 4697,
+       "maxTokens": 4698,
+       "maxUses": 4699
+      }
+     }
+    }
+   },
+   "value": {
+    "apiKeyEnv": "DEEPSEEK_API_KEY",
+    "model": "deepseek-v4-flash",
+    "apiVersion": "2023-06-01",
+    "maxTokens": 4096,
+    "maxUses": 5
+   },
+   "base": {
+    "apiKeyEnv": "DEEPSEEK_API_KEY",
+    "model": "deepseek-v4-flash",
+    "apiVersion": "2023-06-01",
+    "maxTokens": 4096,
+    "maxUses": 5
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [
+    {
+     "path": [
+      "apiKey"
+     ],
+     "set": false
+    }
+   ],
+   "revision": 0
+  },
+  {
+   "ns": "web-deepseek-api",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 4723,
+    "refs": {
+     "4708": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 50,
+       "default": 10
+      }
+     },
+     "4709": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 5
+      }
+     },
+     "4710": {
+      "type": "boolean",
+      "meta": {
+       "default": true
+      }
+     },
+     "4711": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "auto"
+     },
+     "4712": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "account"
+     },
+     "4713": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "api-key"
+     },
+     "4714": {
+      "type": "union",
+      "meta": {
+       "default": "auto"
+      },
+      "list": [
+       4711,
+       4712,
+       4713
+      ]
+     },
+     "4715": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "auto"
+     },
+     "4716": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "account"
+     },
+     "4717": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "api-key"
+     },
+     "4718": {
+      "type": "union",
+      "meta": {
+       "default": "auto"
+      },
+      "list": [
+       4715,
+       4716,
+       4717
+      ]
+     },
+     "4719": {
+      "type": "string",
+      "meta": {}
+     },
+     "4720": {
+      "type": "string",
+      "meta": {
+       "role": "credential-ref"
+      }
+     },
+     "4721": {
+      "type": "string",
+      "meta": {}
+     },
+     "4722": {
+      "type": "string",
+      "meta": {
+       "role": "credential-ref"
+      }
+     },
+     "4723": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "count": 4708,
+       "searchRequestsPerSecond": 4709,
+       "sendOriginalQuestion": 4710,
+       "searchBilling": 4714,
+       "fetchBilling": 4718,
+       "searchBaseURL": 4719,
+       "searchApiKeyEnv": 4720,
+       "fetchBaseURL": 4721,
+       "fetchApiKeyEnv": 4722
+      }
+     }
+    }
+   },
+   "value": {
+    "count": 10,
+    "searchRequestsPerSecond": 5,
+    "sendOriginalQuestion": true,
+    "searchBilling": "auto",
+    "fetchBilling": "auto"
+   },
+   "base": {
+    "count": 10,
+    "searchRequestsPerSecond": 5,
+    "sendOriginalQuestion": true,
+    "searchBilling": "auto",
+    "fetchBilling": "auto"
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "agent-loop",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 4734,
+    "refs": {
+     "4733": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 10
+      }
+     },
+     "4734": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "maxParallelToolCalls": 4733
+      }
+     }
+    }
+   },
+   "value": {
+    "maxParallelToolCalls": 10
+   },
+   "base": {
+    "maxParallelToolCalls": 10
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "llm-deepseek",
+   "autoGenerate": false,
+   "schema": {
+    "uid": 4804,
+    "refs": {
+     "4736": {
+      "type": "string",
+      "meta": {}
+     },
+     "4737": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "enabled"
+     },
+     "4738": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "disabled"
+     },
+     "4739": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4737,
+       4738
+      ]
+     },
+     "4740": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "off"
+     },
+     "4741": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "low"
+     },
+     "4742": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "high"
+     },
+     "4743": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "max"
+     },
+     "4744": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4740,
+       4741,
+       4742,
+       4743
+      ]
+     },
+     "4745": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 9007199254740991,
+       "default": 256000
+      }
+     },
+     "4746": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 1000000
+      }
+     },
+     "4747": {
+      "type": "string",
+      "meta": {}
+     },
+     "4748": {
+      "type": "string",
+      "meta": {}
+     },
+     "4749": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1
+      }
+     },
+     "4750": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1
+      }
+     },
+     "4751": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1
+      }
+     },
+     "4752": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4751,
+       4753
+      ]
+     },
+     "4753": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "low"
+     },
+     "4754": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 33554432
+      }
+     },
+     "4755": {
+      "type": "const",
+      "meta": {},
+      "value": "in-history"
+     },
+     "4756": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4757,
+       4758
+      ]
+     },
+     "4757": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "in-history"
+     },
+     "4758": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "addition-only"
+     },
+     "4759": {
+      "type": "string",
+      "meta": {
+       "required": true
+      }
+     },
+     "4760": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4761,
+       4762
+      ]
+     },
+     "4761": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "text"
+     },
+     "4762": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "image"
+     },
+     "4763": {
+      "type": "array",
+      "meta": {
+       "default": [
+        "text"
+       ],
+       "min": 1
+      },
+      "inner": 4760
+     },
+     "4764": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "id": 4759,
+       "name": 4747,
+       "description": 4748,
+       "contextWindow": 4749,
+       "maxTokens": 4750,
+       "imagePixelBudget": 4752,
+       "imageTargetBytes": 4754,
+       "systemPromptUpdate": 4755,
+       "toolUpdate": 4756,
+       "inputModalities": 4763
+      }
+     },
+     "4765": {
+      "type": "array",
+      "meta": {
+       "default": [
+        {
+         "id": "deepseek-flash",
+         "name": "DeepSeek-V4.1-Flash",
+         "contextWindow": 1048576,
+         "systemPromptUpdate": "in-history",
+         "toolUpdate": "addition-only",
+         "inputModalities": [
+          "text",
+          "image"
+         ]
+        },
+        {
+         "id": "deepseek-v4-pro",
+         "name": "DeepSeek-V4-Pro",
+         "description": "Stronger agentic coding, knowledge, and difficult reasoning; suited to complex or quality-critical tasks at higher cost.",
+         "contextWindow": 1048576
+        }
+       ]
+      },
+      "inner": 4764
+     },
+     "4766": {
+      "type": "number",
+      "meta": {
+       "min": 5e-324,
+       "max": 2147483647,
+       "default": 300000
+      }
+     },
+     "4767": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 134217728
+      }
+     },
+     "4768": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 20971520
+      }
+     },
+     "4769": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 600
+      }
+     },
+     "4770": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 67108864
+      }
+     },
+     "4771": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 10485760
+      }
+     },
+     "4772": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 20
+      }
+     },
+     "4773": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 3,
+       "default": 3
+      }
+     },
+     "4774": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 0,
+       "max": 2,
+       "default": 2
+      }
+     },
+     "4775": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 2147483647,
+       "default": 500
+      }
+     },
+     "4776": {
+      "type": "number",
+      "meta": {
+       "min": 5e-324,
+       "max": 2147483647,
+       "default": 20000
+      }
+     },
+     "4777": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 3600,
+       "max": 2592000,
+       "default": 604800
+      }
+     },
+     "4778": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 0,
+       "default": 3600
+      }
+     },
+     "4779": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 1000,
+       "default": 100
+      }
+     },
+     "4780": {
+      "type": "number",
+      "meta": {
+       "min": 5e-324,
+       "max": 2147483647,
+       "default": 500
+      }
+     },
+     "4781": {
+      "type": "number",
+      "meta": {
+       "min": 5e-324,
+       "max": 2147483647,
+       "default": 10000
+      }
+     },
+     "4782": {
+      "type": "number",
+      "meta": {
+       "min": 0,
+       "max": 1,
+       "default": 0.1
+      }
+     },
+     "4783": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "initialDelayMs": 4780,
+       "maxDelayMs": 4781,
+       "jitterRatio": 4782
+      }
+     },
+     "4784": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "normal"
+     },
+     "4785": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 0,
+       "max": 9007199254740991,
+       "default": 5
+      }
+     },
+     "4786": {
+      "type": "const",
+      "meta": {},
+      "value": "EMPTY_RESPONSE"
+     },
+     "4787": {
+      "type": "const",
+      "meta": {},
+      "value": "MALFORMED_RESPONSE"
+     },
+     "4788": {
+      "type": "const",
+      "meta": {},
+      "value": "QUOTA"
+     },
+     "4789": {
+      "type": "const",
+      "meta": {},
+      "value": "RATE_LIMIT"
+     },
+     "4790": {
+      "type": "const",
+      "meta": {},
+      "value": "SERVER"
+     },
+     "4791": {
+      "type": "const",
+      "meta": {},
+      "value": "STREAM_CLOSED"
+     },
+     "4792": {
+      "type": "const",
+      "meta": {},
+      "value": "TIMEOUT"
+     },
+     "4793": {
+      "type": "const",
+      "meta": {},
+      "value": "TRANSPORT"
+     },
+     "4794": {
+      "type": "string",
+      "meta": {
+       "min": 1
+      }
+     },
+     "4795": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4786,
+       4787,
+       4788,
+       4789,
+       4790,
+       4791,
+       4792,
+       4793,
+       4794
+      ]
+     },
+     "4796": {
+      "type": "array",
+      "meta": {
+       "default": [
+        "EMPTY_RESPONSE",
+        "RATE_LIMIT",
+        "SERVER",
+        "TIMEOUT",
+        "TRANSPORT"
+       ],
+       "min": 1
+      },
+      "inner": 4795
+     },
+     "4797": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "mode": 4784,
+       "maxRetries": 4785,
+       "retryableCodes": 4796,
+       "backoff": 4783
+      }
+     },
+     "4798": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "always"
+     },
+     "4799": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "mode": 4798,
+       "backoff": 4783
+      }
+     },
+     "4800": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4797,
+       4799
+      ]
+     },
+     "4801": {
+      "type": "number",
+      "meta": {
+       "min": 5e-324,
+       "max": 2147483647,
+       "default": 5000
+      }
+     },
+     "4802": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 0,
+       "max": 9007199254740991,
+       "default": 600000
+      }
+     },
+     "4803": {
+      "type": "string",
+      "meta": {
+       "role": "credential-ref",
+       "default": "DEEPSEEK_API_KEY"
+      }
+     },
+     "4804": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "baseURL": 4736,
+       "thinking": 4739,
+       "reasoningEffort": 4744,
+       "maxTokens": 4745,
+       "defaultContextWindow": 4746,
+       "models": 4765,
+       "streamIdleTimeoutMs": 4766,
+       "maxRequestFilesBytes": 4767,
+       "maxInlineRequestImageBytes": 4768,
+       "maxImagesPerRequest": 4769,
+       "imageOffloadByteQuantum": 4770,
+       "inlineImageOffloadByteQuantum": 4771,
+       "imageOffloadCountQuantum": 4772,
+       "fileUploadConcurrency": 4773,
+       "fileUploadMaxRetries": 4774,
+       "fileUploadRetryDelayMs": 4775,
+       "filesApiTimeoutMs": 4776,
+       "fileExpiresAfterSeconds": 4777,
+       "fileRefreshMarginSeconds": 4778,
+       "fileQuotaCleanupBatch": 4779,
+       "retryPolicy": 4800,
+       "modelsTimeoutMs": 4801,
+       "modelsMaxAgeMs": 4802,
+       "apiKeyEnv": 4803
+      }
+     }
+    }
+   },
+   "value": {
+    "maxTokens": 256000,
+    "defaultContextWindow": 1000000,
+    "models": [
+     {
+      "id": "deepseek-flash",
+      "name": "DeepSeek-V4.1-Flash",
+      "contextWindow": 1048576,
+      "systemPromptUpdate": "in-history",
+      "toolUpdate": "addition-only",
+      "inputModalities": [
+       "text",
+       "image"
+      ]
+     },
+     {
+      "id": "deepseek-v4-pro",
+      "name": "DeepSeek-V4-Pro",
+      "description": "Stronger agentic coding, knowledge, and difficult reasoning; suited to complex or quality-critical tasks at higher cost.",
+      "contextWindow": 1048576,
+      "inputModalities": [
+       "text"
+      ]
+     }
+    ],
+    "streamIdleTimeoutMs": 300000,
+    "maxRequestFilesBytes": 134217728,
+    "maxInlineRequestImageBytes": 20971520,
+    "maxImagesPerRequest": 600,
+    "imageOffloadByteQuantum": 67108864,
+    "inlineImageOffloadByteQuantum": 10485760,
+    "imageOffloadCountQuantum": 20,
+    "fileUploadConcurrency": 3,
+    "fileUploadMaxRetries": 2,
+    "fileUploadRetryDelayMs": 500,
+    "filesApiTimeoutMs": 20000,
+    "fileExpiresAfterSeconds": 604800,
+    "fileRefreshMarginSeconds": 3600,
+    "fileQuotaCleanupBatch": 100,
+    "modelsTimeoutMs": 5000,
+    "modelsMaxAgeMs": 600000,
+    "apiKeyEnv": "DEEPSEEK_API_KEY"
+   },
+   "base": {
+    "maxTokens": 256000,
+    "defaultContextWindow": 1000000,
+    "models": [
+     {
+      "id": "deepseek-flash",
+      "name": "DeepSeek-V4.1-Flash",
+      "contextWindow": 1048576,
+      "systemPromptUpdate": "in-history",
+      "toolUpdate": "addition-only",
+      "inputModalities": [
+       "text",
+       "image"
+      ]
+     },
+     {
+      "id": "deepseek-v4-pro",
+      "name": "DeepSeek-V4-Pro",
+      "description": "Stronger agentic coding, knowledge, and difficult reasoning; suited to complex or quality-critical tasks at higher cost.",
+      "contextWindow": 1048576,
+      "inputModalities": [
+       "text"
+      ]
+     }
+    ],
+    "streamIdleTimeoutMs": 300000,
+    "maxRequestFilesBytes": 134217728,
+    "maxInlineRequestImageBytes": 20971520,
+    "maxImagesPerRequest": 600,
+    "imageOffloadByteQuantum": 67108864,
+    "inlineImageOffloadByteQuantum": 10485760,
+    "imageOffloadCountQuantum": 20,
+    "fileUploadConcurrency": 3,
+    "fileUploadMaxRetries": 2,
+    "fileUploadRetryDelayMs": 500,
+    "filesApiTimeoutMs": 20000,
+    "fileExpiresAfterSeconds": 604800,
+    "fileRefreshMarginSeconds": 3600,
+    "fileQuotaCleanupBatch": 100,
+    "modelsTimeoutMs": 5000,
+    "modelsMaxAgeMs": 600000,
+    "apiKeyEnv": "DEEPSEEK_API_KEY"
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "llm-deepseek-account",
+   "autoGenerate": false,
+   "schema": {
+    "uid": 4896,
+    "refs": {
+     "4829": {
+      "type": "string",
+      "meta": {}
+     },
+     "4830": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "enabled"
+     },
+     "4831": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "disabled"
+     },
+     "4832": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4830,
+       4831
+      ]
+     },
+     "4833": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "off"
+     },
+     "4834": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "low"
+     },
+     "4835": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "high"
+     },
+     "4836": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "max"
+     },
+     "4837": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4833,
+       4834,
+       4835,
+       4836
+      ]
+     },
+     "4838": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 9007199254740991,
+       "default": 256000
+      }
+     },
+     "4839": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 1000000
+      }
+     },
+     "4840": {
+      "type": "number",
+      "meta": {
+       "min": 5e-324,
+       "max": 2147483647,
+       "default": 300000
+      }
+     },
+     "4841": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 134217728
+      }
+     },
+     "4842": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 20971520
+      }
+     },
+     "4843": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 600
+      }
+     },
+     "4844": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 67108864
+      }
+     },
+     "4845": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 10485760
+      }
+     },
+     "4846": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 20
+      }
+     },
+     "4847": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 3,
+       "default": 3
+      }
+     },
+     "4848": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 0,
+       "max": 2,
+       "default": 2
+      }
+     },
+     "4849": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 2147483647,
+       "default": 500
+      }
+     },
+     "4850": {
+      "type": "number",
+      "meta": {
+       "min": 5e-324,
+       "max": 2147483647,
+       "default": 20000
+      }
+     },
+     "4851": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 3600,
+       "max": 2592000,
+       "default": 604800
+      }
+     },
+     "4852": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 0,
+       "default": 3600
+      }
+     },
+     "4853": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 1000,
+       "default": 100
+      }
+     },
+     "4854": {
+      "type": "number",
+      "meta": {
+       "min": 5e-324,
+       "max": 2147483647,
+       "default": 500
+      }
+     },
+     "4855": {
+      "type": "number",
+      "meta": {
+       "min": 5e-324,
+       "max": 2147483647,
+       "default": 10000
+      }
+     },
+     "4856": {
+      "type": "number",
+      "meta": {
+       "min": 0,
+       "max": 1,
+       "default": 0.1
+      }
+     },
+     "4857": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "initialDelayMs": 4854,
+       "maxDelayMs": 4855,
+       "jitterRatio": 4856
+      }
+     },
+     "4858": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "normal"
+     },
+     "4859": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 0,
+       "max": 9007199254740991,
+       "default": 5
+      }
+     },
+     "4860": {
+      "type": "const",
+      "meta": {},
+      "value": "EMPTY_RESPONSE"
+     },
+     "4861": {
+      "type": "const",
+      "meta": {},
+      "value": "MALFORMED_RESPONSE"
+     },
+     "4862": {
+      "type": "const",
+      "meta": {},
+      "value": "QUOTA"
+     },
+     "4863": {
+      "type": "const",
+      "meta": {},
+      "value": "RATE_LIMIT"
+     },
+     "4864": {
+      "type": "const",
+      "meta": {},
+      "value": "SERVER"
+     },
+     "4865": {
+      "type": "const",
+      "meta": {},
+      "value": "STREAM_CLOSED"
+     },
+     "4866": {
+      "type": "const",
+      "meta": {},
+      "value": "TIMEOUT"
+     },
+     "4867": {
+      "type": "const",
+      "meta": {},
+      "value": "TRANSPORT"
+     },
+     "4868": {
+      "type": "string",
+      "meta": {
+       "min": 1
+      }
+     },
+     "4869": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4860,
+       4861,
+       4862,
+       4863,
+       4864,
+       4865,
+       4866,
+       4867,
+       4868
+      ]
+     },
+     "4870": {
+      "type": "array",
+      "meta": {
+       "default": [
+        "EMPTY_RESPONSE",
+        "RATE_LIMIT",
+        "SERVER",
+        "TIMEOUT",
+        "TRANSPORT"
+       ],
+       "min": 1
+      },
+      "inner": 4869
+     },
+     "4871": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "mode": 4858,
+       "maxRetries": 4859,
+       "retryableCodes": 4870,
+       "backoff": 4857
+      }
+     },
+     "4872": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "always"
+     },
+     "4873": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "mode": 4872,
+       "backoff": 4857
+      }
+     },
+     "4874": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4871,
+       4873
+      ]
+     },
+     "4875": {
+      "type": "number",
+      "meta": {
+       "min": 5e-324,
+       "max": 2147483647,
+       "default": 5000
+      }
+     },
+     "4876": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 0,
+       "max": 9007199254740991,
+       "default": 600000
+      }
+     },
+     "4877": {
+      "type": "string",
+      "meta": {}
+     },
+     "4878": {
+      "type": "string",
+      "meta": {}
+     },
+     "4879": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1
+      }
+     },
+     "4880": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1
+      }
+     },
+     "4881": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1
+      }
+     },
+     "4882": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4881,
+       4883
+      ]
+     },
+     "4883": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "low"
+     },
+     "4884": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 33554432
+      }
+     },
+     "4885": {
+      "type": "const",
+      "meta": {},
+      "value": "in-history"
+     },
+     "4886": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4887,
+       4888
+      ]
+     },
+     "4887": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "in-history"
+     },
+     "4888": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "addition-only"
+     },
+     "4889": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4890,
+       4891
+      ]
+     },
+     "4890": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "text"
+     },
+     "4891": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "image"
+     },
+     "4892": {
+      "type": "array",
+      "meta": {
+       "default": []
+      },
+      "inner": 4889
+     },
+     "4893": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "name": 4877,
+       "description": 4878,
+       "contextWindow": 4879,
+       "maxTokens": 4880,
+       "imagePixelBudget": 4882,
+       "imageTargetBytes": 4884,
+       "systemPromptUpdate": 4885,
+       "toolUpdate": 4886,
+       "inputModalities": 4892
+      }
+     },
+     "4894": {
+      "type": "string",
+      "meta": {}
+     },
+     "4895": {
+      "type": "dict",
+      "meta": {
+       "default": {}
+      },
+      "inner": 4893,
+      "sKey": 4894
+     },
+     "4896": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "baseURL": 4829,
+       "thinking": 4832,
+       "reasoningEffort": 4837,
+       "maxTokens": 4838,
+       "defaultContextWindow": 4839,
+       "streamIdleTimeoutMs": 4840,
+       "maxRequestFilesBytes": 4841,
+       "maxInlineRequestImageBytes": 4842,
+       "maxImagesPerRequest": 4843,
+       "imageOffloadByteQuantum": 4844,
+       "inlineImageOffloadByteQuantum": 4845,
+       "imageOffloadCountQuantum": 4846,
+       "fileUploadConcurrency": 4847,
+       "fileUploadMaxRetries": 4848,
+       "fileUploadRetryDelayMs": 4849,
+       "filesApiTimeoutMs": 4850,
+       "fileExpiresAfterSeconds": 4851,
+       "fileRefreshMarginSeconds": 4852,
+       "fileQuotaCleanupBatch": 4853,
+       "retryPolicy": 4874,
+       "modelsTimeoutMs": 4875,
+       "modelsMaxAgeMs": 4876,
+       "modelOverrides": 4895
+      }
+     }
+    }
+   },
+   "value": {
+    "maxTokens": 256000,
+    "defaultContextWindow": 1000000,
+    "streamIdleTimeoutMs": 300000,
+    "maxRequestFilesBytes": 134217728,
+    "maxInlineRequestImageBytes": 20971520,
+    "maxImagesPerRequest": 600,
+    "imageOffloadByteQuantum": 67108864,
+    "inlineImageOffloadByteQuantum": 10485760,
+    "imageOffloadCountQuantum": 20,
+    "fileUploadConcurrency": 3,
+    "fileUploadMaxRetries": 2,
+    "fileUploadRetryDelayMs": 500,
+    "filesApiTimeoutMs": 20000,
+    "fileExpiresAfterSeconds": 604800,
+    "fileRefreshMarginSeconds": 3600,
+    "fileQuotaCleanupBatch": 100,
+    "modelsTimeoutMs": 5000,
+    "modelsMaxAgeMs": 600000,
+    "modelOverrides": {}
+   },
+   "base": {
+    "maxTokens": 256000,
+    "defaultContextWindow": 1000000,
+    "streamIdleTimeoutMs": 300000,
+    "maxRequestFilesBytes": 134217728,
+    "maxInlineRequestImageBytes": 20971520,
+    "maxImagesPerRequest": 600,
+    "imageOffloadByteQuantum": 67108864,
+    "inlineImageOffloadByteQuantum": 10485760,
+    "imageOffloadCountQuantum": 20,
+    "fileUploadConcurrency": 3,
+    "fileUploadMaxRetries": 2,
+    "fileUploadRetryDelayMs": 500,
+    "filesApiTimeoutMs": 20000,
+    "fileExpiresAfterSeconds": 604800,
+    "fileRefreshMarginSeconds": 3600,
+    "fileQuotaCleanupBatch": 100,
+    "modelsTimeoutMs": 5000,
+    "modelsMaxAgeMs": 600000,
+    "modelOverrides": {}
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "subagent-model-selection-settings",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 4925,
+    "refs": {
+     "4920": {
+      "type": "boolean",
+      "meta": {
+       "default": false
+      }
+     },
+     "4921": {
+      "type": "string",
+      "meta": {
+       "min": 1,
+       "required": true
+      }
+     },
+     "4922": {
+      "type": "string",
+      "meta": {
+       "min": 1,
+       "required": true
+      }
+     },
+     "4923": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "provider": 4921,
+       "model": 4922
+      }
+     },
+     "4924": {
+      "type": "array",
+      "meta": {
+       "default": []
+      },
+      "inner": 4923
+     },
+     "4925": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "enabled": 4920,
+       "allowedModels": 4924
+      }
+     }
+    }
+   },
+   "value": {
+    "enabled": false,
+    "allowedModels": []
+   },
+   "base": {
+    "enabled": false,
+    "allowedModels": []
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "ui-context-menu",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 4929,
+    "refs": {
+     "4928": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 1000
+      }
+     },
+     "4929": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "resolutionTimeoutMs": 4928
+      }
+     }
+    }
+   },
+   "value": {
+    "resolutionTimeoutMs": 1000
+   },
+   "base": {
+    "resolutionTimeoutMs": 1000
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "ui-settings-account",
+   "autoGenerate": false,
+   "schema": {
+    "uid": 4957,
+    "refs": {
+     "4931": {
+      "type": "const",
+      "meta": {
+       "default": 1
+      },
+      "value": 1
+     },
+     "4932": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "welcome"
+     },
+     "4933": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "credit"
+     },
+     "4934": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "purpose"
+     },
+     "4935": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "process"
+     },
+     "4936": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "done"
+     },
+     "4937": {
+      "type": "union",
+      "meta": {
+       "default": "welcome"
+      },
+      "list": [
+       4932,
+       4933,
+       4934,
+       4935,
+       4936
+      ]
+     },
+     "4938": {
+      "type": "const",
+      "meta": {},
+      "value": null
+     },
+     "4939": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "office"
+     },
+     "4940": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "development"
+     },
+     "4941": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "both"
+     },
+     "4942": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4939,
+       4940,
+       4941,
+       4938
+      ]
+     },
+     "4943": {
+      "type": "const",
+      "meta": {},
+      "value": null
+     },
+     "4944": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "compact"
+     },
+     "4945": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "standard"
+     },
+     "4946": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "detailed"
+     },
+     "4947": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4944,
+       4945,
+       4946,
+       4943
+      ]
+     },
+     "4948": {
+      "type": "const",
+      "meta": {},
+      "value": null
+     },
+     "4949": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "completed"
+     },
+     "4950": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "skipped"
+     },
+     "4951": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "api-key"
+     },
+     "4952": {
+      "type": "union",
+      "meta": {},
+      "list": [
+       4949,
+       4950,
+       4951,
+       4948
+      ]
+     },
+     "4953": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "compact"
+     },
+     "4954": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "detailed"
+     },
+     "4955": {
+      "type": "union",
+      "meta": {
+       "default": "compact"
+      },
+      "list": [
+       4953,
+       4954
+      ]
+     },
+     "4956": {
+      "type": "boolean",
+      "meta": {
+       "default": true
+      }
+     },
+     "4957": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "version": 4931,
+       "step": 4937,
+       "purpose": 4942,
+       "process": 4947,
+       "completion": 4952,
+       "usage": 4955,
+       "developerTools": 4956
+      }
+     }
+    }
+   },
+   "value": {
+    "version": 1,
+    "step": "welcome",
+    "usage": "compact",
+    "developerTools": true
+   },
+   "base": {
+    "version": 1,
+    "step": "welcome",
+    "usage": "compact",
+    "developerTools": true
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "ui-account-notifications",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 4966,
+    "refs": {
+     "4965": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 2147483647,
+       "default": 600000
+      }
+     },
+     "4966": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "notificationPollIntervalMs": 4965
+      }
+     }
+    }
+   },
+   "value": {
+    "notificationPollIntervalMs": 600000
+   },
+   "base": {
+    "notificationPollIntervalMs": 600000
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "mcp-manager",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 4994,
+    "refs": {
+     "4968": {
+      "type": "any",
+      "meta": {}
+     },
+     "4969": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "stdio"
+     },
+     "4970": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "streamable-http"
+     },
+     "4971": {
+      "type": "union",
+      "meta": {
+       "required": true
+      },
+      "list": [
+       4969,
+       4970
+      ]
+     },
+     "4972": {
+      "type": "string",
+      "meta": {
+       "default": ""
+      }
+     },
+     "4973": {
+      "type": "string",
+      "meta": {
+       "required": true
+      }
+     },
+     "4974": {
+      "type": "array",
+      "meta": {
+       "default": []
+      },
+      "inner": 4973
+     },
+     "4975": {
+      "type": "string",
+      "meta": {
+       "required": true
+      }
+     },
+     "4976": {
+      "type": "string",
+      "meta": {}
+     },
+     "4977": {
+      "type": "dict",
+      "meta": {
+       "default": {}
+      },
+      "inner": 4975,
+      "sKey": 4976
+     },
+     "4978": {
+      "type": "string",
+      "meta": {
+       "default": ""
+      }
+     },
+     "4979": {
+      "type": "string",
+      "meta": {
+       "default": ""
+      }
+     },
+     "4980": {
+      "type": "string",
+      "meta": {
+       "required": true
+      }
+     },
+     "4981": {
+      "type": "string",
+      "meta": {}
+     },
+     "4982": {
+      "type": "dict",
+      "meta": {
+       "default": {}
+      },
+      "inner": 4980,
+      "sKey": 4981
+     },
+     "4983": {
+      "type": "boolean",
+      "meta": {
+       "default": true
+      }
+     },
+     "4984": {
+      "type": "number",
+      "meta": {}
+     },
+     "4985": {
+      "type": "number",
+      "meta": {
+       "min": 1,
+       "max": 2147483647,
+       "default": 30000
+      }
+     },
+     "4986": {
+      "type": "number",
+      "meta": {
+       "min": 1,
+       "max": 2147483647
+      }
+     },
+     "4987": {
+      "type": "any",
+      "meta": {}
+     },
+     "4988": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "eager"
+     },
+     "4989": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "on-demand"
+     },
+     "4990": {
+      "type": "union",
+      "meta": {
+       "default": "eager"
+      },
+      "list": [
+       4988,
+       4989
+      ]
+     },
+     "4991": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "oauth": 4968,
+       "transport": 4971,
+       "command": 4972,
+       "args": 4974,
+       "env": 4977,
+       "cwd": 4978,
+       "url": 4979,
+       "headers": 4982,
+       "enabled": 4983,
+       "toolCallTimeoutMs": 4984,
+       "startupTimeoutMs": 4985,
+       "closeTimeoutMs": 4986,
+       "reconnect": 4987,
+       "toolLoading": 4990
+      }
+     },
+     "4992": {
+      "type": "string",
+      "meta": {}
+     },
+     "4993": {
+      "type": "dict",
+      "meta": {
+       "default": {}
+      },
+      "inner": 4991,
+      "sKey": 4992
+     },
+     "4994": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "servers": 4993
+      }
+     }
+    }
+   },
+   "value": {
+    "servers": {}
+   },
+   "base": {
+    "servers": {}
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "connection",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 5002,
+    "refs": {
+     "4996": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 2147483647,
+       "default": 500
+      }
+     },
+     "4997": {
+      "type": "number",
+      "meta": {
+       "min": 1,
+       "max": 1.7976931348623157e+308,
+       "default": 2
+      }
+     },
+     "4998": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 2147483647,
+       "default": 10000
+      }
+     },
+     "4999": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 2147483647,
+       "default": 3000
+      }
+     },
+     "5000": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 2147483647,
+       "default": 15000
+      }
+     },
+     "5001": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "backoffBaseMs": 4996,
+       "backoffFactor": 4997,
+       "backoffMaxMs": 4998,
+       "generationReadyWarnMs": 4999,
+       "generationReadyTimeoutMs": 5000
+      }
+     },
+     "5002": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "recovery": 5001
+      }
+     }
+    }
+   },
+   "value": {
+    "recovery": {
+     "backoffBaseMs": 500,
+     "backoffFactor": 2,
+     "backoffMaxMs": 10000,
+     "generationReadyWarnMs": 3000,
+     "generationReadyTimeoutMs": 15000
+    }
+   },
+   "base": {
+    "recovery": {
+     "backoffBaseMs": 500,
+     "backoffFactor": 2,
+     "backoffMaxMs": 10000,
+     "generationReadyWarnMs": 3000,
+     "generationReadyTimeoutMs": 15000
+    }
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "ui-theme",
+   "autoGenerate": false,
+   "schema": {
+    "uid": 5014,
+    "refs": {
+     "5004": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "light"
+     },
+     "5005": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "dark"
+     },
+     "5006": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "system"
+     },
+     "5007": {
+      "type": "union",
+      "meta": {
+       "default": "system"
+      },
+      "list": [
+       5004,
+       5005,
+       5006
+      ]
+     },
+     "5008": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 10,
+       "max": 22,
+       "default": 14
+      }
+     },
+     "5009": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 10,
+       "max": 16,
+       "default": 11
+      }
+     },
+     "5010": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 10,
+       "max": 20,
+       "default": 13
+      }
+     },
+     "5011": {
+      "type": "string",
+      "meta": {
+       "default": ""
+      }
+     },
+     "5012": {
+      "type": "string",
+      "meta": {
+       "default": ""
+      }
+     },
+     "5013": {
+      "type": "string",
+      "meta": {
+       "default": ""
+      }
+     },
+     "5014": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "preference": 5007,
+       "fontSize": 5008,
+       "codeFontSize": 5009,
+       "terminalFontSize": 5010,
+       "textFontFamily": 5011,
+       "codeFontFamily": 5012,
+       "terminalFontFamily": 5013
+      }
+     }
+    }
+   },
+   "value": {
+    "preference": "system",
+    "fontSize": 14,
+    "codeFontSize": 11,
+    "terminalFontSize": 13,
+    "textFontFamily": "",
+    "codeFontFamily": "",
+    "terminalFontFamily": ""
+   },
+   "base": {
+    "preference": "system",
+    "fontSize": 14,
+    "codeFontSize": 11,
+    "terminalFontSize": 13,
+    "textFontFamily": "",
+    "codeFontFamily": "",
+    "terminalFontFamily": ""
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "locale",
+   "autoGenerate": false,
+   "schema": {
+    "uid": 5023,
+    "refs": {
+     "5022": {
+      "type": "string",
+      "meta": {
+       "pattern": {
+        "source": "^[A-Za-z]{2,8}(?:-[A-Za-z0-9]{1,8})*$",
+        "flags": "u"
+       },
+       "required": false
+      }
+     },
+     "5023": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "preference": 5022
+      }
+     }
+    }
+   },
+   "value": {},
+   "base": {},
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "shortcuts",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 5026,
+    "refs": {
+     "5025": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 2147483646,
+       "default": 500
+      }
+     },
+     "5026": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "stopSequenceMs": 5025
+      }
+     }
+    }
+   },
+   "value": {
+    "stopSequenceMs": 500
+   },
+   "base": {
+    "stopSequenceMs": 500
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "ui-sidebar-documentpreview",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 5037,
+    "refs": {
+     "5028": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 9007199254740991,
+       "default": 8
+      }
+     },
+     "5029": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 9007199254740991,
+       "default": 67108864
+      }
+     },
+     "5030": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 9007199254740991,
+       "default": 8
+      }
+     },
+     "5031": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 9007199254740991,
+       "default": 32
+      }
+     },
+     "5032": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "maxCachedEntries": 5028,
+       "maxCachedBytes": 5029,
+       "maxPending": 5030,
+       "maxReaders": 5031
+      }
+     },
+     "5033": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 9007199254740991,
+       "default": 16777216
+      }
+     },
+     "5034": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 9007199254740991,
+       "default": 250000
+      }
+     },
+     "5035": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "max": 2147483647,
+       "default": 15000
+      }
+     },
+     "5036": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "maxBytes": 5033,
+       "maxCells": 5034,
+       "timeoutMs": 5035
+      }
+     },
+     "5037": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "office": 5032,
+       "excel": 5036
+      }
+     }
+    }
+   },
+   "value": {
+    "office": {
+     "maxCachedEntries": 8,
+     "maxCachedBytes": 67108864,
+     "maxPending": 8,
+     "maxReaders": 32
+    },
+    "excel": {
+     "maxBytes": 16777216,
+     "maxCells": 250000,
+     "timeoutMs": 15000
+    }
+   },
+   "base": {
+    "office": {
+     "maxCachedEntries": 8,
+     "maxCachedBytes": 67108864,
+     "maxPending": 8,
+     "maxReaders": 32
+    },
+    "excel": {
+     "maxBytes": 16777216,
+     "maxCells": 250000,
+     "timeoutMs": 15000
+    }
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "ui-settings",
+   "autoGenerate": false,
+   "schema": {
+    "uid": 5041,
+    "refs": {
+     "5040": {
+      "type": "boolean",
+      "meta": {
+       "default": true
+      }
+     },
+     "5041": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "enabled": 5040
+      }
+     }
+    }
+   },
+   "value": {
+    "enabled": true
+   },
+   "base": {
+    "enabled": true
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "ui-settings-general",
+   "autoGenerate": false,
+   "schema": {
+    "uid": 5044,
+    "refs": {
+     "5043": {
+      "type": "string",
+      "meta": {}
+     },
+     "5044": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "welcomeNoticeVersion": 5043
+      }
+     }
+    }
+   },
+   "value": {},
+   "base": {},
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "ui-settings-models",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 5047,
+    "refs": {
+     "5046": {
+      "type": "boolean",
+      "meta": {
+       "default": true
+      }
+     },
+     "5047": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "credentialOnboarding": 5046
+      }
+     }
+    }
+   },
+   "value": {
+    "credentialOnboarding": true
+   },
+   "base": {
+    "credentialOnboarding": true
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "ui-conversation",
+   "autoGenerate": false,
+   "schema": {
+    "uid": 5053,
+    "refs": {
+     "5049": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "queue"
+     },
+     "5050": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "steer"
+     },
+     "5051": {
+      "type": "union",
+      "meta": {
+       "default": "queue"
+      },
+      "list": [
+       5049,
+       5050
+      ]
+     },
+     "5052": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 1,
+       "default": 2
+      }
+     },
+     "5053": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "busyEnter": 5051,
+       "maxConcurrentFileUploads": 5052
+      }
+     }
+    }
+   },
+   "value": {
+    "busyEnter": "queue",
+    "maxConcurrentFileUploads": 2
+   },
+   "base": {
+    "busyEnter": "queue",
+    "maxConcurrentFileUploads": 2
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "ui-chat",
+   "autoGenerate": false,
+   "schema": {
+    "uid": 5075,
+    "refs": {
+     "5056": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "compact"
+     },
+     "5057": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "standard"
+     },
+     "5058": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "detailed"
+     },
+     "5059": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "verbose"
+     },
+     "5060": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "normal"
+     },
+     "5061": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "expanded"
+     },
+     "5062": {
+      "type": "union",
+      "meta": {
+       "loose": true
+      },
+      "list": [
+       5056,
+       5057,
+       5058,
+       5059,
+       5060,
+       5061
+      ]
+     },
+     "5063": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "completion"
+     },
+     "5064": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "next-input"
+     },
+     "5065": {
+      "type": "union",
+      "meta": {
+       "default": "completion"
+      },
+      "list": [
+       5063,
+       5064
+      ]
+     },
+     "5066": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "all"
+     },
+     "5067": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "final"
+     },
+     "5068": {
+      "type": "union",
+      "meta": {
+       "default": "all"
+      },
+      "list": [
+       5066,
+       5067
+      ]
+     },
+     "5069": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "compact"
+     },
+     "5070": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "detailed"
+     },
+     "5071": {
+      "type": "union",
+      "meta": {
+       "default": "detailed"
+      },
+      "list": [
+       5069,
+       5070
+      ]
+     },
+     "5072": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "sidebar"
+     },
+     "5073": {
+      "type": "const",
+      "meta": {
+       "required": true
+      },
+      "value": "new-tab"
+     },
+     "5074": {
+      "type": "union",
+      "meta": {
+       "default": "sidebar"
+      },
+      "list": [
+       5072,
+       5073
+      ]
+     },
+     "5075": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "transcriptView": 5062,
+       "collapseTiming": 5065,
+       "foldedReplies": 5068,
+       "performanceUsage": 5071,
+       "linkOpening": 5074
+      }
+     }
+    }
+   },
+   "value": {
+    "collapseTiming": "completion",
+    "foldedReplies": "all",
+    "performanceUsage": "detailed",
+    "linkOpening": "sidebar"
+   },
+   "base": {
+    "collapseTiming": "completion",
+    "foldedReplies": "all",
+    "performanceUsage": "detailed",
+    "linkOpening": "sidebar"
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "action-cards",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 5082,
+    "refs": {
+     "5081": {
+      "type": "boolean",
+      "meta": {
+       "default": true
+      }
+     },
+     "5082": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "enabled": 5081
+      }
+     }
+    }
+   },
+   "value": {
+    "enabled": true
+   },
+   "base": {
+    "enabled": true
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "ui-workspace",
+   "autoGenerate": true,
+   "schema": {
+    "uid": 5085,
+    "refs": {
+     "5084": {
+      "type": "number",
+      "meta": {
+       "step": 1,
+       "min": 0,
+       "default": 10
+      }
+     },
+     "5085": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "recentViewLimit": 5084
+      }
+     }
+    }
+   },
+   "value": {
+    "recentViewLimit": 10
+   },
+   "base": {
+    "recentViewLimit": 10
+   },
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  },
+  {
+   "ns": "agent-preset-registry",
+   "autoGenerate": false,
+   "schema": {
+    "uid": 5088,
+    "refs": {
+     "5087": {
+      "type": "string",
+      "meta": {}
+     },
+     "5088": {
+      "type": "object",
+      "meta": {
+       "default": {}
+      },
+      "dict": {
+       "selectedDefault": 5087
+      }
+     }
+    }
+   },
+   "value": {},
+   "base": {},
+   "user": {},
+   "applies": "live",
+   "secrets": [],
+   "revision": 0
+  }
+ ]
+}

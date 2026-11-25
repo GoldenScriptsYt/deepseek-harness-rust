@@ -1,0 +1,21 @@
+[package]
+name = "dsh-web"
+description = "Web search and fetch providers with the model-facing web tools"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+dsh-core = { path = "../dsh-core" }
+dsh-llm = { path = "../dsh-llm" }
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time", "net", "io-util"] }
+reqwest = { version = "0.12", features = ["json", "stream"] }
+url = "2"
+encoding_rs = "0.8"
+html5ever = "0.39"
+
+[dev-dependencies]
+tempfile = "3"

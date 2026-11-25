@@ -1,0 +1,38 @@
+[package]
+name = "dsh-tools"
+description = "Built-in Rust Agent tools for workspace files, shell commands, and Cordis inspection"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+dsh-core = { path = "../dsh-core" }
+dsh-llm = { path = "../dsh-llm" }
+dsh-planning = { path = "../dsh-planning" }
+dsh-session-format = { path = "../dsh-session-format" }
+serde.workspace = true
+serde_json.workspace = true
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time", "process", "fs", "io-util", "net"] }
+globset = "0.4"
+ignore = "0.4"
+regex = "1"
+tempfile = "3"
+
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = [
+  "Win32_Foundation",
+  "Win32_Security",
+  "Win32_Security_Cryptography",
+  "Win32_Storage_FileSystem",
+  "Win32_System_Console",
+  "Win32_System_Environment",
+  "Win32_System_JobObjects",
+  "Win32_System_LibraryLoader",
+  "Win32_System_Pipes",
+  "Win32_System_Threading",
+  "Win32_System_WindowsProgramming",
+] }

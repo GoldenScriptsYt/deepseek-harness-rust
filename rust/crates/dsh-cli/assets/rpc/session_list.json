@@ -1,0 +1,62 @@
+{
+ "items": [
+  {
+   "sessionId": "session-00000000-0000-4000-8000-000000000002",
+   "updatedAt": 1767225600000,
+   "agentAvailable": false,
+   "formatStatus": "current",
+   "running": false,
+   "blank": true,
+   "cwd": "C:\\workspace\\deepseek-harness\\default-workspace",
+   "projections": {
+    "kind": "cached",
+    "asOfSeq": 2,
+    "values": {
+     "userQuestions": {
+      "active": [],
+      "settled": []
+     },
+     "sessionListMetadata": {
+      "blank": true,
+      "lastPromptAt": null
+     },
+     "tokenUsage": {
+      "uncachedInputTokens": 0,
+      "outputTokens": 0,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+     },
+     "title": null,
+     "goal": null,
+     "agentPreset": "standard",
+     "workingDirectory": "C:\\workspace\\deepseek-harness\\default-workspace",
+     "modelSelection": {
+      "lastUsed": null,
+      "next": null
+     },
+     "permissions": {
+      "currentValue": "workspace-write"
+     },
+     "inbox": {
+      "next-turn": [],
+      "next-step": []
+     },
+     "subagentCatalog": [],
+     "subagentTiming": {
+      "settledMs": 0
+     },
+     "subagent": null,
+     "agentTeam": {
+      "enabled": false,
+      "tasks": []
+     },
+     "plan": {
+      "active": false,
+      "pending": false
+     },
+     "conversationContinuation": null
+    }
+   }
+  }
+ ]
+}

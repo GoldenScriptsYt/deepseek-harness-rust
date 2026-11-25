@@ -1,0 +1,14 @@
+[package]
+name = "dsh-planning"
+description = "Durable goal, plan, todo, and schedule projections for DSH"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+dsh-session-format = { path = "../dsh-session-format" }
+chrono = { version = "0.4", default-features = false, features = ["std"] }
+chrono-tz = "0.10"
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true

@@ -1,0 +1,10 @@
+[
+ {
+  "id": "deepseek-official",
+  "name": "DeepSeek API"
+ },
+ {
+  "id": "deepseek-account",
+  "name": "DeepSeek Account"
+ }
+]

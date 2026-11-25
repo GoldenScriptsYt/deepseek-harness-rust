@@ -1,0 +1,11 @@
+[package]
+name = "dsh-session-format"
+description = "Reader and writer for the current DSH Session JSONL log format"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true

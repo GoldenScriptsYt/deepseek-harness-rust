@@ -1,0 +1,12 @@
+<script>(() => {
+  const preference = "system"
+  const systemDark = preference === 'system'
+    && typeof matchMedia !== 'undefined'
+    && matchMedia('(prefers-color-scheme: dark)').matches
+  const dark = preference === 'dark' || systemDark
+  document.documentElement.dataset.dsThemeSource = preference
+  document.body.toggleAttribute('data-ds-dark-theme', dark)
+  document.body.style.setProperty("--dsh-content-font-size", "14px")
+  document.body.style.setProperty("--dsh-code-font-size", "11px")
+  document.body.style.setProperty("--dsh-terminal-font-size", "13px")
+})()</script><script>(globalThis.__DSH_BOOT_READY__ ??= Promise.withResolvers()).resolve()</script>

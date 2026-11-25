@@ -1,0 +1,58 @@
+{
+ "search": [
+  {
+   "id": "deepseek-official",
+   "description": {
+    "en": "No per-search charge, but every search uses extra model tokens. Requires a DeepSeek account or API key.",
+    "zh": "搜索不按次收费，每次搜索都会额外消耗模型 token。需要 DeepSeek 账号或 API Key。",
+    "ja": "検索ごとの料金はかかりませんが、検索のたびに追加のモデルトークンを消費します。DeepSeek アカウントまたは API キーが必要です。",
+    "es": "Sin cargo por búsqueda, pero cada búsqueda consume tokens adicionales del modelo. Requiere una cuenta de DeepSeek o una clave de API.",
+    "fr": "Sans frais par recherche, mais chaque recherche consomme des jetons de modèle supplémentaires. Nécessite un compte DeepSeek ou une clé API.",
+    "de": "Keine Kosten pro Suche, aber jede Suche verbraucht zusätzliche Modell-Tokens. Erfordert ein DeepSeek-Konto oder einen API-Schlüssel.",
+    "ru": "Плата за каждый поиск не взимается, но каждый поиск расходует дополнительные токены модели. Требуется учётная запись DeepSeek или ключ API.",
+    "pt": "Sem cobrança por pesquisa, mas cada pesquisa consome tokens extras do modelo. Requer uma conta DeepSeek ou uma chave de API."
+   }
+  },
+  {
+   "id": "deepseek-search-api",
+   "description": {
+    "en": "Incurs charges, paid by the account or API key chosen under Billing.",
+    "zh": "会产生费用，由「计费方式」选定的账号或 API Key 支付。",
+    "ja": "料金が発生し、「課金方法」で選んだアカウントまたは API キーに請求されます。",
+    "es": "Genera cargos, que paga la cuenta o la clave de API elegida en Facturación.",
+    "fr": "Entraîne des frais, payés par le compte ou la clé API choisi dans Facturation.",
+    "de": "Verursacht Kosten, die das unter Abrechnung gewählte Konto oder der API-Schlüssel trägt.",
+    "ru": "Услуга платная: оплата идёт с аккаунта или ключа API, выбранного в разделе «Оплата».",
+    "pt": "Gera cobranças, pagas pela conta ou chave de API escolhida em Cobrança."
+   }
+  }
+ ],
+ "fetch": [
+  {
+   "id": "deepseek-fetch-api",
+   "description": {
+    "en": "Can't reach intranet or local addresses. Incurs charges, paid by the account or API key chosen under Billing.",
+    "zh": "无法访问内网和本机。会产生费用，由「计费方式」选定的账号或 API Key 支付。",
+    "ja": "イントラネットやローカルのアドレスにはアクセスできません。料金が発生し、「課金方法」で選んだアカウントまたは API キーに請求されます。",
+    "es": "No puede acceder a direcciones de la intranet ni locales. Genera cargos, que paga la cuenta o la clave de API elegida en Facturación.",
+    "fr": "N'accède pas aux adresses intranet ou locales. Entraîne des frais, payés par le compte ou la clé API choisi dans Facturation.",
+    "de": "Erreicht keine Intranet- oder lokalen Adressen. Verursacht Kosten, die das unter Abrechnung gewählte Konto oder der API-Schlüssel trägt.",
+    "ru": "Адреса интрасети и локальные адреса недоступны. Услуга платная: оплата идёт с аккаунта или ключа API, выбранного в разделе «Оплата».",
+    "pt": "Não acessa endereços da intranet nem locais. Gera cobranças, pagas pela conta ou chave de API escolhida em Cobrança."
+   }
+  },
+  {
+   "id": "http",
+   "description": {
+    "en": "Free, and can reach intranet and local addresses. Does not support pages that need JavaScript or sign-in, or PDFs.",
+    "zh": "免费，可访问内网和本机。不支持需要 JavaScript 或登录的页面，也不支持 PDF。",
+    "ja": "無料で、イントラネットやローカルのアドレスにもアクセスできます。JavaScript やログインが必要なページ、PDF には対応しません。",
+    "es": "Gratis y puede acceder a direcciones de la intranet y locales. No admite páginas que requieran JavaScript o inicio de sesión, ni PDF.",
+    "fr": "Gratuit, et accède aux adresses intranet et locales. Ne prend pas en charge les pages nécessitant JavaScript ou une connexion, ni les PDF.",
+    "de": "Kostenlos und erreicht auch Intranet- und lokale Adressen. Keine Seiten, die JavaScript oder eine Anmeldung erfordern, und keine PDFs.",
+    "ru": "Бесплатно, доступны адреса интрасети и локальные адреса. Не поддерживает страницы, требующие JavaScript или входа, а также PDF.",
+    "pt": "Gratuito e acessa endereços da intranet e locais. Não oferece suporte a páginas que exigem JavaScript ou login, nem a PDFs."
+   }
+  }
+ ]
+}

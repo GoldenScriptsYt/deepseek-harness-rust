@@ -1,0 +1,5 @@
+---
+name: missing-description
+---
+
+Bad.

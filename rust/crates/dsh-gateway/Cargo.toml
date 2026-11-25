@@ -1,0 +1,16 @@
+[package]
+name = "dsh-gateway"
+description = "HTTP RPC, WebSocket stream mux, token auth and static serving for the web client"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+axum = { version = "0.8", features = ["ws"] }
+futures-util = "0.3"
+serde_json.workspace = true
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time", "net", "fs"] }
+
+[dev-dependencies]
+reqwest = { version = "0.12", features = ["json"] }
+tokio-tungstenite = "0.26"

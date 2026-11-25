@@ -1,0 +1,13 @@
+[package]
+name = "dsh-skills"
+description = "Filesystem skill discovery, validation, cataloging, and body loading"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+serde_yaml = "0.9"
+thiserror.workspace = true
+
+[dev-dependencies]
+tempfile = "3"
