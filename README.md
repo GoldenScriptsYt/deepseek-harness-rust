@@ -24,9 +24,7 @@ To assemble a portable Windows folder:
 
 The package script builds the app and places the portable output under rust/dist/DeepSeekHarness/.
 
-## Credentials and local data
 
-No API keys, account tokens, browser credentials, .env files, .dsh data, or session history are included. The app reads credentials and sessions from the current user's local Harness home. Keep personal keys in the app's credential settings or local environment; never commit them.
 
 ## License
 
